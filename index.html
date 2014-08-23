@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Faces by irwansun2013</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Faces</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/irwansun2013/faces">View the Project on GitHub <small>irwansun2013/faces</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/irwansun2013/faces/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/irwansun2013/faces/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/irwansun2013/faces">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>&lt;!doctype html&gt;
+
+  </p>
+
+<pre><code>&lt;h1&gt;
+  Welcome to my webpage! Here I am: &lt;br&gt;
+
+  &lt;img src="http://sis.smu.edu.sg/sites/default/files/sis/programmes/MITB/images/students/ssa/2012/irwan.jpg"&gt;
+&lt;/h1&gt;
+&lt;script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'&gt;&lt;/script&gt;
+&lt;script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'&gt;&lt;/script&gt;
+&lt;link rel='stylesheet' type='text/css' href='/resources/tutorial/css/example.css'&gt;
+</code></pre>
+
+<p>
+  </p>
+
+<pre><code>&lt;div id='messagesDiv'&gt;&lt;/div&gt;
+&lt;input type='text' id='nameInput' placeholder='Name'&gt;
+&lt;input type='text' id='messageInput' placeholder='Message'&gt;
+&lt;script&gt;
+  var myDataRef = new Firebase('https://sl81m7s7m3w.firebaseio-demo.com/');
+  $('#messageInput').keypress(function (e) {
+    if (e.keyCode == 13) {
+      var name = $('#nameInput').val();
+      var text = $('#messageInput').val();
+      myDataRef.push({name: name, text: text});
+      $('#messageInput').val('');
+    }
+  });
+  myDataRef.on('child_added', function(snapshot) {
+    var message = snapshot.val();
+    displayChatMessage(message.name, message.text);
+  });
+  function displayChatMessage(name, text) {
+    $('&lt;div/&gt;').text(text).prepend($('&lt;em/&gt;').text(name+': ')).appendTo($('#messagesDiv'));
+    $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+  };
+&lt;/script&gt;
+</code></pre>
+
+<p>
+</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/irwansun2013">irwansun2013</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
